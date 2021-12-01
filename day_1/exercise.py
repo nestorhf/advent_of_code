@@ -46,8 +46,8 @@ def positive_movements(window_of_average: int, list_numbers: List[int]) -> int:
 
     for number in remaining_numbers:
         last_numbers.append(number)  # add new number to last position
-        sum_1 = sum(last_numbers[:window_of_average]) / window_of_average
-        sum_2 = sum(last_numbers[-window_of_average:]) / window_of_average
+        sum_1 = sum(last_numbers[:window_of_average])
+        sum_2 = sum(last_numbers[-window_of_average:])
         # now compare
         if sum_1 < sum_2:
             counter += 1
