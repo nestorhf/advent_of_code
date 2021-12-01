@@ -1,7 +1,9 @@
 # Advent of Code
 
 I will publish my work regarding the wonderful:  
-🎄🎅🏼**Advent of Code**🎄🎅👉🏼[link](https://adventofcode.com/)
+🎄🎅🏼**Advent of Code**🎅🏼  
+[Try it out!](https://adventofcode.com/)
+
 
 Follow me as I complete all the days!
 - [x] Day 1 
