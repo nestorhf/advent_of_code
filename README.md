@@ -1,10 +1,10 @@
 # Advent of Code
 
-I will publish my work regarding the wonderful:
+I will publish my work regarding the wonderful:  
 🎄🎅🏼**Advent of Code**🎄🎅👉🏼[link](https://adventofcode.com/)
 
 Follow me as I complete all the days!
-- [x][x] Day 1 
+- [ ] Day 1 
 - [ ] Day 2
 - [ ] Day 3
 - [ ] Day 4
