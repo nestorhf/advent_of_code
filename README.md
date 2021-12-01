@@ -1,7 +1,7 @@
 # Advent of Code
 
 I will publish my work regarding the wonderful:  
-🎄🎅🏼**Advent of Code*🎄*🎅🏼  
+🎄🎅🏼**Advent of Cod**e*🎄*🎅🏼  
 [Try it out!](https://adventofcode.com/)
 
 
