@@ -4,7 +4,7 @@ I will publish my work regarding the wonderful:
 🎄🎅🏼**Advent of Code**🎄🎅👉🏼[link](https://adventofcode.com/)
 
 Follow me as I complete all the days!
-- [ ] Day 1 
+- [x] Day 1 
 - [ ] Day 2
 - [ ] Day 3
 - [ ] Day 4
