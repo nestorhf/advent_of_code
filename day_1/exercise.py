@@ -1,6 +1,6 @@
 """
 Task 1: Calculate the difference of the reading column, and get which ones are positive and which
-ones are positive and which one aren't
+and which one aren't
 Task 2: Same, but first calculate the moving average of the 3 values next to you, and then
 calculate the difference
 """
