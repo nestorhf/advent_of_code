@@ -1,11 +1,31 @@
 """
 Task 1: Calculate the difference of the reading column, and get which ones are positive and which
-and which one aren't
+ones are positive and which one aren't
 Task 2: Same, but first calculate the moving average of the 3 values next to you, and then
 calculate the difference
 """
 from typing import List
 import pandas as pd
+
+
+def positive_movements_optimized(window_of_average: int, list_numbers: List[int]) -> int:
+    """
+    When comparing the difference of an average, let's say that the averages that I want to compare
+    are these two 
+
+    list_numbers = [1,2,3,4]
+    set_a = [1,2,3]
+    set_b =   [2,3,4]
+
+    As you can see, the only difference is 1 and 4, since they share [2,3]
+    If we just compare 1(index 0) and 4 (index 0 + window_number)
+    There is no need for an average, just a simple comparison
+    """
+    counter = 0
+    for index in range(len(list_numbers) - window_of_average):
+        if list_numbers[index] < list_numbers[index + window_of_average]:
+            counter += 1
+    return counter
 
 
 def positive_movements(window_of_average: int, list_numbers: List[int]) -> int:
@@ -66,8 +86,8 @@ def regular_approach(df: pd.DataFrame):
     """
     print('[*] List approach')
     list_numbers = df['reading'].to_list()
-    solution_1 = positive_movements(1, list_numbers)
-    solution_2 = positive_movements(3, list_numbers)
+    solution_1 = positive_movements_optimized(1, list_numbers)
+    solution_2 = positive_movements_optimized(3, list_numbers)
     print(f'Answer 1: {solution_1}')
     print(f'Answer 2: {solution_2}')
 
