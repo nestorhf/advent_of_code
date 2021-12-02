@@ -10,15 +10,15 @@ import pandas as pd
 
 def positive_movements_optimized(window_of_average: int, list_numbers: List[int]) -> int:
     """
-    When comparing the difference of an average, let's say that the averages that I want to compare
-    are these two 
+    When calculating the difference of an average, let's say that the averages that I want to
+    compare are these two sets:
 
     list_numbers = [1,2,3,4]
     set_a = [1,2,3]
     set_b =   [2,3,4]
 
-    As you can see, the only difference is 1 and 4, since they share [2,3]
-    If we just compare 1(index 0) and 4 (index 0 + window_number)
+    The only difference between the sets is [1] and [4], since they share [2,3]
+    We can just compare 1(index 0) and 4 (index 0 + window_number)
     There is no need for an average, just a simple comparison
     """
     counter = 0
