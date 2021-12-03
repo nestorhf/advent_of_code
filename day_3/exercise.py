@@ -12,7 +12,7 @@ import pandas as pd
 
 def get_life_support_rating(list_of_readings: list, strategy: str):
     """
-    Generate rating based on list of readings and strategy
+    Generate rating based on list of readings and strategy. Last word standing wins!
 
     To do this we get a list of readings and a strategy ('min' or 'max')
     :param list_of_readings: list containing words of the same length consisting of '0' and '1's
@@ -45,7 +45,7 @@ def get_power_consumption(list_of_readings: list, strategy: str) -> int:
     return int(reading, 2)  # bin -> int
 
 
-def get_most_recurring_digit(word: list, strategy: str):
+def get_most_recurring_digit(word: list, strategy: str) -> str:
     """
     Given a word, returns the most recurring digit, following one strategy if there's a tie
     # TODO: Function could be cleaner
@@ -67,9 +67,7 @@ def get_most_recurring_digit(word: list, strategy: str):
 
 
 def regular_approach(list_of_readings: list):
-    """
-    Easily keep variables and Cycle
-    """
+
     print('[*] Regular approach')
 
     gamma = get_power_consumption(list_of_readings, strategy='max')
@@ -78,7 +76,7 @@ def regular_approach(list_of_readings: list):
 
     co2 = get_life_support_rating(list_of_readings, strategy='min')
     oxygen = get_life_support_rating(list_of_readings, strategy='max')
-    print(f'Part 2: {co2 * oxygen}')
+    print(f'Part 2: {co2*oxygen}')
 
 
 def main():
