@@ -69,7 +69,6 @@ def get_most_recurring_digit(word: list, strategy: str) -> str:
 def regular_approach(list_of_readings: list):
 
     print('[*] Regular approach')
-
     gamma = get_power_consumption(list_of_readings, strategy='max')
     epsilon = get_power_consumption(list_of_readings, strategy='min')
     print(f'Part 1: {gamma*epsilon}')
