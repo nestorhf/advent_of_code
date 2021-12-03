@@ -1,5 +1,9 @@
 """
-Task 1: Move around and keep track of where you are
+Task 1: Given a list of binaries ('0010101'), get the combination of the most
+(and least) recurring digits per index
+Task 2: Given a list of binaries ('0010101'), get the most (or least) recurring
+digit per index and remove items that don't meet the criteria. Keep going for
+all indexes until there's only one left
 """
 from collections import Counter
 
