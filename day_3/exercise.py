@@ -10,7 +10,7 @@ from collections import Counter
 import pandas as pd
 
 
-def get_life_support_rating(list_of_readings: list, strategy: str):
+def get_life_support_rating(list_of_readings: list, strategy: str) -> int:
     """
     Generate rating based on list of readings and strategy. Last word standing wins!
 
@@ -30,6 +30,7 @@ def get_life_support_rating(list_of_readings: list, strategy: str):
         ]
         if len(list_of_alive) == 1:  # reached the end! Last man standing
             return int(list_of_alive[0], 2)
+    return 0  # if there's no solution
 
 
 def get_power_consumption(list_of_readings: list, strategy: str) -> int:
