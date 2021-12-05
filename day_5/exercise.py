@@ -113,14 +113,14 @@ def main():
     The approach is the following:
 
     Gather the lines and store them in a class called Line
-    This class can retrieve the Points the cross through that line
+    This class can retrieve the Points that make up a line
     By creating a counter of those points, you can see how many of those points
     were repeated more than once.
 
     Regarding both parts, part 1 you don't have to take into acccounts
     diagonals, but in part 2 you do.
 
-    This is a minor change with the flag `diagonal=True` so that the function get_points_of_line
+    Part 2 is a minor change with the flag `diagonal=True` so that the function get_points_of_line
     Returns diagonal points as well.
     """
 
@@ -132,15 +132,15 @@ def main():
     points: List[Point] = get_points(lines)
     points_string: List[str] = [point.get_string() for point in points]
     counter_of_points = dict(Counter(points_string))
-    list_more_than_once = [item for item in list(counter_of_points.values()) if item > 1]
-    print(f'Part 1: {len(list_more_than_once)}')
+    intersection_of_lines = [item for item in list(counter_of_points.values()) if item > 1]
+    print(f'Part 1: {len(intersection_of_lines)}')
 
     # part 2
     points: List[Point] = get_points(lines, diagonal=True)
     points_string: List[str] = [point.get_string() for point in points]
     counter_of_points = dict(Counter(points_string))
-    list_more_than_once = [item for item in list(counter_of_points.values()) if item > 1]
-    print(f'Part 2: {len(list_more_than_once)}')
+    intersection_of_lines = [item for item in list(counter_of_points.values()) if item > 1]
+    print(f'Part 2: {len(intersection_of_lines)}')
 
 
 if __name__ == '__main__':
