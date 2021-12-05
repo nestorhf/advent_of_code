@@ -12,6 +12,7 @@ from collections import Counter
 class Point():
     """
     Overengineered class to store a point (x,y)
+    Dataclass did not suffice because I also want to get the string form of the point
     """
 
     def __init__(self, x: int, y: int):
