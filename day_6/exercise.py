@@ -26,14 +26,14 @@ class Fish():
     """
     Welcome to the class Fish!!
     It has some attributes:
-        - age. If age reaches 0 the Fish will have a baby! Age works backwords
+        - age. If age reaches 0 the Fish will have a baby! Age works backwards
         - cycle. After having a baby the age is restarted to this value
         - units. Keeping track of how many fish are identical
 
     Let's say I create a Fish.
 
     salmon = Fish(age=1)
-    potential_baby = salmon.next_day() # potentital baby = None
+    potential_baby = salmon.next_day() # potential baby = None
     salmon.age # age=0, it will have a baby next day
     baby_salmon = salmon.next_day() # baby_salmon=Fish(), age=ADULT_CYCLE, cycle=ADULT_CYCLE
     """
@@ -91,7 +91,7 @@ class FishSchool():
     def next_day(self):
         """
         Run the method .next_day for all fish in the school
-        Append new borns to `all_fish`!
+        Append newborns to `all_fish`!
         """
         new_borns = []
         for fish in self.all_fish:
