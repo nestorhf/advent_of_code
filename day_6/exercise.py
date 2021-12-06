@@ -150,7 +150,7 @@ def get_number_of_fish_given_days(fish_list: List[Fish], days: int) -> int:
     Given X days, run simulation of how many Fish there will be in the school
     """
     fish_school = FishSchool(fish_list)
-    for day in range(1, days+1):
+    for _ in range(1, days+1):
         fish_school.next_day()
         fish_school.sort_fish()
 
