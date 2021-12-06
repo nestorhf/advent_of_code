@@ -34,8 +34,8 @@ class Fish():
 
     salmon = Fish(age=1)
     potential_baby = salmon.next_day() # potentital baby = None
-    salmon.age # age=0
-    potential_baby = salmon.next_day() # potential baby = Fish()
+    salmon.age # age=0, it will have a baby next day
+    baby_salmon = salmon.next_day() # baby_salmon=Fish(), age=ADULT_CYCLE, cycle=ADULT_CYCLE
     """
 
     def __init__(self, age: int, new_born=False, units=1):
@@ -106,7 +106,7 @@ class FishSchool():
     def sort_fish(self):
         """
         Count the fish with the same `age` and `cycle`.
-        If will group all the fish with the same properties and increment their units
+        It will group all the fish with the same properties and increment their units
         This class updates the attribute `self.all_fish` and their units
 
         Example:
@@ -123,7 +123,7 @@ class FishSchool():
         dict_of_fish = {}
         for fish in self.all_fish:
             # fish not in dict
-            if fish not in list(dict_of_fish.values()):
+            if fish not in dict_of_fish.values():
                 dict_of_fish[fish] = fish
             # fish is repeated
             else:
@@ -146,6 +146,9 @@ def get_initial_pack_of_fish(input_filename: str) -> List[Fish]:
 
 
 def get_number_of_fish_given_days(fish_list: List[Fish], days: int) -> int:
+    """
+    Given X days, run simulation of how many Fish there will be in the school
+    """
     fish_school = FishSchool(fish_list)
     for day in range(1, days+1):
         fish_school.next_day()
@@ -155,7 +158,6 @@ def get_number_of_fish_given_days(fish_list: List[Fish], days: int) -> int:
 
 
 def main():
-
     # input
     input_filename = 'day_6/input_hard.txt'
 
