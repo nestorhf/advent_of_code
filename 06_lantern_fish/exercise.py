@@ -1,4 +1,8 @@
 """
+⚠️  Overengineered! I saw an answer only that it was much
+much more simple. Classes are not necessary, don't follow my
+approach! ⚠️
+
 Lantern fish
 Task 1: Count have many lantern fish there are in a pack after 80 days
 Task 2: Same but in 256 days
