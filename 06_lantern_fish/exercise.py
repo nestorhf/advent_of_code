@@ -1,7 +1,7 @@
 """
-⚠️  Overengineered! I saw an answer only that it was much
+*** ⚠️  Overengineered! I saw an answer online that it was much
 much more simple. Classes are not necessary, don't follow my
-approach! ⚠️
+approach! ⚠️  ***
 
 Lantern fish
 Task 1: Count have many lantern fish there are in a pack after 80 days
