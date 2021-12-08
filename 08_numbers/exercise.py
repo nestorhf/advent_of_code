@@ -1,31 +1,11 @@
 """
-Numbers
-  0:      1:      2:      3:      4:
- aaaa    ....    aaaa    aaaa    ....
-b    c  .    c  .    c  .    c  b    c
-b    c  .    c  .    c  .    c  b    c
- ....    ....    dddd    dddd    dddd
-e    f  .    f  e    .  .    f  .    f
-e    f  .    f  e    .  .    f  .    f
- gggg    ....    gggg    gggg    ....
-
-  5:      6:      7:      8:      9:
- aaaa    aaaa    aaaa    aaaa    aaaa
-b    .  b    .  .    c  b    c  b    c
-b    .  b    .  .    c  b    c  b    c
- dddd    dddd    ....    dddd    dddd
-.    f  e    f  .    f  e    f  .    f
-.    f  e    f  .    f  e    f  .    f
- gggg    gggg    ....    gggg    gggg
-
-
-Task 1: I have some numbers list(range(0,10))
+Task 1: With the length you can infer which number it is
+Task 2: Infer all numbers with domain and get a 1 to 1 mapping of of the side
+ABCDEFG to the appropriate answer
 """
-
 
 from typing import List
 from collections import Counter
-from dataclasses import dataclass
 
 # dictionary with numbers
 NUMBERS = {
@@ -40,23 +20,18 @@ NUMBERS = {
     8: 'ABCDEFG',
     9: 'ABCDFG'
 }
-
 POSSIBLE_CONNECTIONS = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 
 # get possible connections into a dictionary
 
-def get_unique_numbers_lengths():
+def get_easy_result(output_numbers: List[str]):
+    instances_of_unique_numbers = 0
     list_lengths = [len(value) for value in NUMBERS.values()]
     list_lengths = Counter(list_lengths)
     unique_lengths = [key for key, value in Counter(list_lengths).items() if value == 1]
-    return unique_lengths
-
-def get_easy_result(output_numbers: List[str]):
-    instances_of_unique_numbers = 0
-    list_unique_numbers = get_unique_numbers_lengths()
     for outputs in output_numbers:
         for output in outputs:
-            if len(output) in list_unique_numbers:
+            if len(output) in unique_lengths:
                 instances_of_unique_numbers += 1
     return instances_of_unique_numbers
 
@@ -97,9 +72,7 @@ def get_repeated_chars(list_of_words: List[str]):
 
 
 def get_complete_decoded_answer(numbers_coded, output_numbers):
-
     mapping_lengths = get_mapping_lengths()
-
     total_sum = 0
     for row_index, _ in enumerate(numbers_coded):
         # new row
@@ -118,7 +91,7 @@ def get_complete_decoded_answer(numbers_coded, output_numbers):
                 could_be = set(list_number_coded)
                 new_alive = list(alive.intersection(could_be))
                 solutions_dict[char] = new_alive
-        # clean up
+        # Clean up if alive
         solved = []
         for key, value in solutions_dict.items():
             if len(value) == 1:
@@ -150,7 +123,6 @@ def translate_numbers(solutions_dict: dict):
             new_char = solutions_dict[char][0]
             translated_word += new_char
         numbers_translated[key] = ''.join(sorted(translated_word))
-
     numbers_translated = {value: key for key, value in numbers_translated.items()}
     return numbers_translated
         
@@ -158,11 +130,10 @@ def translate_numbers(solutions_dict: dict):
 def main():
     input_path = '08_numbers/input_hard.txt'
     numbers_coded, output_numbers = load_input(input_path)
-
     # task 1
     result_1 = get_easy_result(output_numbers)
     print(f'Task 1: {result_1}')
-
+    # task 2
     result_2 = get_complete_decoded_answer(numbers_coded, output_numbers)
     print(f'Task 2: {result_2}')
     
