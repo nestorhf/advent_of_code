@@ -2,10 +2,70 @@
 Task 1: With the length you can infer which number it is
 Task 2: Infer all numbers with domain and get a 1 to 1 mapping of of the side
 ABCDEFG to the appropriate answer
+
+
+We want to solve each side, ABCDEFG. The input can be random, represented by lower case
+
+      target          input is mixed
+
+       AAAA                bbbb   
+      B    C              c    d  
+      B    C              c    d  
+       DDDD                ffff   
+      E    F              g    e  
+      E    F              g    e  
+       GGGG                aaaa   
+
+
+input_row = be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb | fdgacbe cefdb cefbgd gcbe
+
+  0:      1:      2:      3:      4:
+ AAAA    ....    AAAA    AAAA    ....
+B    C  .    C  .    C  .    C  B    C
+B    C  .    C  .    C  .    C  B    C
+ ....    ....    DDDD    DDDD    DDDD
+E    F  .    F  E    .  .    F  .    F
+E    F  .    F  E    .  .    F  .    F
+ GGGG    ....    GGGG    GGGG    ....
+
+  5:      6:      7:      8:      9:
+ AAAA    AAAA    AAAA    AAAA    AAAA
+B    .  B    .  .    C  B    C  B    C
+B    .  B    .  .    C  B    C  B    C
+ DDDD    DDDD    ....    DDDD    DDDD
+.    F  E    F  .    F  E    F  .    F
+.    F  E    F  .    F  E    F  .    F
+ GGGG    GGGG    ....    GGGG    GGGG
+
+As you can see, the target and the input are different, and we don't know the order
+What I coded is a solution that calculates your target.
+
+
+INITIAL DOMAIN
+{'A': ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+ 'B': ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+ 'C': ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+ 'D': ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+ 'E': ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+ 'F': ['a', 'b', 'c', 'd', 'e', 'f', 'g'],
+ 'G': ['a', 'b', 'c', 'd', 'e', 'f', 'g']}
+
+TARGET DOMAIN
+{'A': ['b'],
+ 'B': ['c'],
+ 'C': ['d'],
+ 'D': ['f'],
+ 'E': ['g'],
+ 'F': ['e'],
+ 'G': ['a']}
+
+With this we can trasnlate the variable NUMBERS into our solution to translate
+the target words
 """
 
 from typing import List, Tuple, Dict
 from collections import Counter
+from pprint import pprint
 
 
 NUMBERS = {
@@ -83,6 +143,7 @@ def initialize_domain():
     dictionary_solutions = {}
     for letter in POSSIBLE_CONNECTIONS:
         dictionary_solutions[letter.upper()] = POSSIBLE_CONNECTIONS.copy()
+    pprint(dictionary_solutions)
     return dictionary_solutions
 
 
