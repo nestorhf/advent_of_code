@@ -7,7 +7,7 @@ ABCDEFG to the appropriate answer
 from typing import List, Tuple, Dict
 from collections import Counter
 
-# dictionary with numbers
+
 NUMBERS = {
     0: 'ABCEFG',
     1: 'CF',
@@ -20,7 +20,6 @@ NUMBERS = {
     8: 'ABCDEFG',
     9: 'ABCDFG'
 }
-
 
 POSSIBLE_CONNECTIONS = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 
