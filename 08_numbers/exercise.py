@@ -4,7 +4,8 @@ Task 2: Infer all numbers with domain and get a 1 to 1 mapping of of the side
 ABCDEFG to the appropriate answer
 
 
-We want to solve each side, ABCDEFG. The input can be random, represented by lower case
+We want to solve each side, ABCDEFG. The input can be random, represented by
+lower case
 
       target          input is mixed
 
@@ -59,8 +60,7 @@ TARGET DOMAIN
  'F': ['e'],
  'G': ['a']}
 
-With this we can trasnlate the variable NUMBERS into our solution to translate
-the target words
+With this we can translate the variable NUMBERS into our solution
 """
 
 from typing import List, Tuple, Dict
@@ -89,7 +89,7 @@ def get_easy_result(output_numbers: List[str]) -> int:
     Easy solution
     1. Count the length of each number (0: ABCEFG)
     2. Get those ones that have a unique length
-    3. In the output, count the lenghts and increment
+    3. In the output, count the lengths and increment
     """
     instances_of_unique_numbers = 0
     list_lengths = [len(value) for value in NUMBERS.values()]
@@ -186,7 +186,7 @@ def reduce_domains(row_numbers_coded, mapping_lengths):
 
 def clean_up_domains(domains):
     """
-    In the final stage, some anwers have been reached. 
+    In the final stage, some answers have been reached. 
     If there's an answer assigned, let's say A->g, then 'g' needs to be deleted
     from all the other domains. Do this until all domains have 1 digit.
     """
